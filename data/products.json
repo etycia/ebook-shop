@@ -1,0 +1,32 @@
+[
+  {
+    "id": "aa",
+    "name": "Savane",
+    "description": "La survie dans la savane",
+    "USD_price": "29,99",
+    "EUR_price": "39,99",
+    "file_link": "/epub/aa.epub",
+    "creation_date": "2019/11/25",
+    "orders_counter": 49
+  },
+  {
+    "id": "bb",
+    "name": "Jungle",
+    "description": "La survie dans la jungle",
+    "USD_price": "19,99",
+    "EUR_price": "19,99",
+    "file_link": "/epub/bb.epub",
+    "creation_date": "2019/11/25",
+    "orders_counter": 27
+  },
+  {
+    "id": "cc",
+    "name": "Désert",
+    "description": "La survie dans le désert",
+    "USD_price": "12,99",
+    "EUR_price": "12,99",
+    "file_link": "/epub/cc.epub",
+    "creation_date": "2019/11/25",
+    "orders_counter": 61
+  }
+]
