@@ -1,0 +1,41 @@
+<html>
+<head>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="public/styles.css" rel="stylesheet" media="all" type="text/css"> 
+        <script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+</head>
+<body>
+
+<h1>Ebook store</h1>
+<h2>Les books</h2>
+
+
+<ul>
+    <% books.forEach(function(book) { %>
+        <li><b></b> <%= book.name %> </b> / <%= book.EUR_price %> / nb de commande <%= book.orders_counter %> <button type="button" id="<%= book._id %>" name="buy" value="Buy" class="css3button" onclick="orderById(this.id)">submit</button></li>
+    <% }); %>
+</ul>
+<p id="demo"></p>
+
+<script>
+function orderById(productID) {
+  
+    document.getElementById("demo").innerHTML = "Vous avez commandé : " + productID;
+
+    $.ajax({
+        type: "POST",
+        url: "/",
+        data: {
+            id: productID
+        },
+        success: (a)=>{console.log(a)},
+        dataType: "json"
+    });
+   
+}
+</script>
+</body>
+</html>

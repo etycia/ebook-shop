@@ -11,8 +11,13 @@
   "author": "LO",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
     "express": "^4.17.1",
-    "http": "0.0.0"
+    "http": "0.0.0",
+    "mongodb": "^3.3.5",
+    "mongoose": "^5.7.12",
+    "topology": "^0.2.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.1"
