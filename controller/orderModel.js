@@ -4,18 +4,6 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var orderSchema = new Schema({
-    name: String
-});
-
-var orderModel = mongoose.model('order', orderSchema);
-
-
-// Module 2
-
-//var mongoose = require('mongoose');
-//var Schema = mongoose.Schema;
-
-var order = new orderModel({
     orderDate: Date,
     EUR_amount : Number,
     ebook:[
@@ -23,8 +11,11 @@ var order = new orderModel({
     ],
     user:[
       {type: Schema.Types.ObjectId, ref: 'users'}
+    ]
 });
 
+
+var orderModel = mongoose.model('order', orderSchema);
 
 
 
@@ -38,12 +29,14 @@ async function addOrder (productId, userId, EUR_amount){
     o.user.push(userId);
 
     o.save();
+
 }
 
 async function getUserOrders(userId){
-    var userOrder = new order.find({user : userId});
+    return await new order.find({user : userId});
     
 }
+
 async function getUserProducts(orderId){
     var userProductsIdFromOrder = new order.find({_id : orderId });
     // Todo find array of id?
@@ -52,4 +45,9 @@ async function getUserProducts(orderId){
 }
 
 
-module.exports = 
+module.exports = {
+    addOrder,
+    getUserOrders,
+    getUserProducts
+}
+

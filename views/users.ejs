@@ -1,0 +1,8 @@
+<h2>Liste de vos commandes</h2>
+
+<ul>
+    <% book.forEach(function(books) { %>
+        <li><button type="button" id="<%= book._id %>" name="buy" value="Buy" class="css3button" onclick="orderById(this.id)">Télécharger </button> <b></b> <%= book.name %> </b> / <%= book.EUR_price %> / nb de commande <%= book.orders_counter %> </li>
+    <% }); %>
+</ul>
+

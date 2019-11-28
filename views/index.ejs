@@ -15,7 +15,7 @@
 
 <ul>
     <% books.forEach(function(book) { %>
-        <li><b></b> <%= book.name %> </b> / <%= book.EUR_price %> / nb de commande <%= book.orders_counter %> <button type="button" id="<%= book._id %>" name="buy" value="Buy" class="css3button" onclick="orderById(this.id)">submit</button></li>
+        <li><button type="button" id="<%= book._id %>" name="buy" value="Buy" class="css3button" onclick="orderById(this.id)">Télécharger </button> <b></b> <%= book.name %> </b> / <%= book.EUR_price %> / nb de commande <%= book.orders_counter %> </li>
     <% }); %>
 </ul>
 <p id="demo"></p>
