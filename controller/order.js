@@ -1,7 +1,7 @@
 
 let fs = require('fs');
 
-function orderProductById(id, book, file){
+function orderProductById(id){
     // incrémente le nb de commande
     var fileLink; // ebook path dl
 

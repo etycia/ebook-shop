@@ -7,15 +7,15 @@ var orderSchema = new Schema({
     name: String
 });
 
-
+var orderModel = mongoose.model('order', orderSchema);
 
 
 // Module 2
 
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+//var mongoose = require('mongoose');
+//var Schema = mongoose.Schema;
 
-var order = new Schema({
+var order = new orderModel({
     orderDate: Date,
     EUR_amount : Number,
     ebook:[
@@ -24,6 +24,8 @@ var order = new Schema({
     user:[
       {type: Schema.Types.ObjectId, ref: 'users'}
 });
+
+
 
 
 
@@ -50,5 +52,4 @@ async function getUserProducts(orderId){
 }
 
 
-module.exports = mongoose.model('order', orderSchema);
-mongoose.model('order', orderSchema);
+module.exports = 
